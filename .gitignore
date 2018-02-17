@@ -13,10 +13,10 @@
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
 
-bin
+
 pkg
 src/github.com
 .idea/
 /src/fake_news/vendor/
 /py/
-!/bin/stream_api
+bin/dep
