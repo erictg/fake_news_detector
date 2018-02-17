@@ -1,0 +1,1 @@
+go install -v fake_news/stream_api
