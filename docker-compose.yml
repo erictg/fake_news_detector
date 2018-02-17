@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+  syntaxnet:
+    image: ljm625/syntaxnet-rest-api:dragnn
+    ports:
+      - "9000:9000"
+    volumes:
+      - syntaxnet/models:/models
