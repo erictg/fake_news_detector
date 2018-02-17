@@ -6,3 +6,17 @@ services:
       - "9000:9000"
     volumes:
       - syntaxnet/models:/models
+#  db:
+#    build: db/.
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: rootpass
+#      MYSQL_ROOT_PASSWORD: mypassword
+#      MYSQL_USER: dbuser
+#      MYSQL_PASSWORD: userpass
+#      MYSQL_DATABASE: hophacks
+  stream_api:
+    build: src/fake_news/stream.dockerfile
+    ports:
+      - "8001:8001"

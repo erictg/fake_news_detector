@@ -17,3 +17,5 @@ bin
 pkg
 src/github.com
 .idea/
+/src/fake_news/vendor/
+/py/
