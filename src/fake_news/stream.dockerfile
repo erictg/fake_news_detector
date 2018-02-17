@@ -11,10 +11,10 @@ RUN apk add git
 #golang dep replaces govendor
 RUN go get -u github.com/golang/dep/cmd/dep
 
-#RUN ls /app/src/fact_check
-COPY . /app/src/fact_check/
+#RUN ls /app/src/fake_news
+COPY . /app/src/fake_news/
 
-WORKDIR /app/src/fact_check
+WORKDIR /app/src/fake_news
 
 RUN dep ensure
 
