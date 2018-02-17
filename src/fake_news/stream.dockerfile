@@ -12,7 +12,7 @@ RUN apk add git
 #golang dep replaces govendor
 RUN go get -u github.com/golang/dep/cmd/dep
 
-RUN ls /app/src/fact_check
+#RUN ls /app/src/fact_check
 COPY . /app/src/fact_check/stream_api
 
 WORKDIR /app/src/fact_check/stream_api
