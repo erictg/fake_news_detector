@@ -5,7 +5,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - syntaxnet/models:/models
+      - ./ssyntaxnet/models:/models
 #  db:
 #    build: db/.
 #    ports:
@@ -17,6 +17,8 @@ services:
 #      MYSQL_PASSWORD: userpass
 #      MYSQL_DATABASE: hophacks
   stream_api:
-    build: src/fake_news/stream.dockerfile
+    build:
+      context: ./src/fake_news
+      dockerfile: stream.dockerfile
     ports:
       - "8001:8001"
