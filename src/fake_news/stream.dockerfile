@@ -14,7 +14,7 @@ RUN go get -u github.com/golang/dep/cmd/dep
 
 #RUN ls /app/src/fact_check
 COPY . /app/src/fact_check/stream_api
-
+RUN ls
 WORKDIR /app/src/fact_check/stream_api
 
 RUN dep ensure
