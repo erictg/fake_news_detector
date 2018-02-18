@@ -53,6 +53,12 @@
   revision = "62de8c46ede02a7675c4c79c84883eb164cb71e3"
 
 [[projects]]
+  name = "github.com/rs/cors"
+  packages = ["."]
+  revision = "7af7a1e09ba336d2ea14b1ce73bf693c6837dbf6"
+  version = "v1.2"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/text"
   packages = ["transform"]
@@ -61,6 +67,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "185cf609edeb9d04d108080d53b142d01f6db05e5a1d57cc7d3a63e9efb374bd"
+  inputs-digest = "79b52864e85d015d1f30c39ed4df89280bb9f9501b45dfaf76c8657dc326eb7c"
   solver-name = "gps-cdcl"
   solver-version = 1
