@@ -21,6 +21,6 @@ RUN dep ensure
 WORKDIR app
 
 RUN go install -v fake_news/control_api
-CMD bin/control_api
+CMD $GOPATH/bin/control_api
 
 EXPOSE 8004

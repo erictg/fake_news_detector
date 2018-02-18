@@ -21,6 +21,7 @@ RUN dep ensure
 WORKDIR app
 
 RUN go install -v fake_news/sentiment
-CMD bin/sentiment
+RUN ls $GOPATH/bin
+CMD $GOPATH/bin/sentiment
 
 EXPOSE 8000
