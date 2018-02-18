@@ -23,4 +23,4 @@ WORKDIR app
 RUN go install -v fake_news/control_api
 CMD bin/control_api
 
-EXPOSE 8004
+EXPOSE 8004cat /

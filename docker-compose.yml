@@ -31,7 +31,13 @@ services:
     ports:
       - "8000:8000"
     restart: always
-
+  overall:
+    build:
+      context: ./src/fake_news
+      dockerfile: overall.dockerfile
+    ports:
+      - "8004:8004"
+    restart: always
   verification:
     build:
       context: ./py
@@ -46,6 +52,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8003:8003"
+
   nginx:
     build: ./proxy/.
     ports:
