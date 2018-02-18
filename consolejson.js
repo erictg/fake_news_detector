@@ -1,4 +1,4 @@
-// Automaticcly downloads a page's <p> elements as a JSON via JQUERY 
+// Automaticcly downloads a page's <p> elements as a JSON via JQUERY
 (function(console){
 
     console.save = function(data, filename){
@@ -25,8 +25,29 @@
         a.dispatchEvent(e)
     }
 })(console)
+
 var script = document.createElement('script');script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName('head')[0].appendChild(script);
-
-
 var str = $("p").text();
+console.log(str);
+$.ajax({
+  url: 'https://35.227.102.229/rest/stream',
+  method: 'POST',
+  data: {"content": str, "answer": 1},
+  dataType: "xml/html/script/json",
+  contentType: 'application/json'
+});
+
+var script = document.createElement('script');script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName('head')[0].appendChild(script);
+var str = $("p").text();
+console.log(str);
+$.post('https://35.227.102.229/rest/stream',
+    {
+        "content": (str),
+        "answer": 1
+    });
+
+
+
+
+
 console.save(str);
