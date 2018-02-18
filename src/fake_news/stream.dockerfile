@@ -13,6 +13,7 @@ RUN apk add git
 RUN go get -u github.com/golang/dep/cmd/dep
 
 COPY ./stream_api /app/src/fact_check
+RUN ls /app/src/fact_check
 COPY Gopkg.lock /app/src/fact_check/Gopkg.lock
 COPY Gopkg.toml /app/src/fact_check/Gopkg.toml
 WORKDIR /app/src/fact_check
