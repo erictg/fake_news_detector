@@ -19,6 +19,8 @@ func Analysis(content string) (bool, error){
 		return false, err
 	}
 
+	log.Println("analysis")
+
 	//some math
 	avgSent := averageSentiment(sent)
 	avgVer := verification.Score / verification.Total

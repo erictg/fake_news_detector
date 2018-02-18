@@ -96,7 +96,7 @@ func overall(ratio, verification float32) (bool, error){
 		log.Println(err)
 		return false, err
 	}
-
+	log.Println("overall")
 	var response OverallResponse
 	err = json.NewDecoder(resp.Body).Decode(&response)
 	if err != nil{
