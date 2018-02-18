@@ -47,7 +47,7 @@ def create_centroids(x, y):
 
 #false is fake, true is real
 def compute(x, y):
-    filename = "data.csv"
+    filename = "k/data.csv"
     data_points = np.genfromtxt(filename, delimiter=",")
     centroids = create_centroids(x, y)
     total_iteration = 100

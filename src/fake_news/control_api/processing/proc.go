@@ -57,6 +57,7 @@ func verification(val string) (*VerificationResponse, error){
 
 	resp, err := http.Post(baseUrl, "application/json", bytes.NewBuffer(jsonVal))
 	if err != nil{
+		log.Println("< here")
 		log.Println(err)
 		return nil, err
 	}
@@ -64,6 +65,7 @@ func verification(val string) (*VerificationResponse, error){
 	var response VerificationResponse
 	err = json.NewDecoder(resp.Body).Decode(&response)
 	if err != nil{
+		log.Println("< here2")
 		log.Println(err)
 		return nil, err
 	}
