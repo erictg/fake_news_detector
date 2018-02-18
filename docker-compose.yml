@@ -22,3 +22,15 @@ services:
       dockerfile: stream.dockerfile
     ports:
       - "8001:8001"
+    restart: always
+
+  nginx:
+    build: ./proxy/.
+    ports:
+       - "443:443"
+       - "80:80"
+    environment:
+      - NODE_ENV=production
+    restart: always
+    depends_on:
+      - stream_api
