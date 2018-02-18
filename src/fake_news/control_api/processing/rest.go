@@ -17,6 +17,7 @@ func OverallAnalyze(w http.ResponseWriter, r *http.Request){
 	var dto RestDTO
 	err := json.NewDecoder(r.Body).Decode(&dto)
 	if err != nil{
+		log.Println("error here")
 		log.Println(err)
 		http.Error(w, err.Error(), 400)
 		return
@@ -25,6 +26,7 @@ func OverallAnalyze(w http.ResponseWriter, r *http.Request){
 	result, err := Analysis(dto.Content)
 	if err != nil{
 		log.Println(err)
+		log.Println("error here 2")
 		http.Error(w, err.Error(), 400)
 		return
 	}

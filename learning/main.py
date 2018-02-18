@@ -16,7 +16,7 @@ def index():
     sentiment = ddict['sentiment']
     res = means.compute(ratio, sentiment)
 
-    data = {'truthiness': res}
+    data = {'truthiness': str(res)}
     return json.dumps(data)
 
 
