@@ -7,7 +7,9 @@ app = Flask(__name__)
 
 @app.route('/rest/overall', methods=["POST"])
 def index():
+    print(request.data)
     data = request.data
+    print(data)
     ddict = json.loads(data)
 
     ratio = ddict['ratio']
