@@ -5,18 +5,18 @@ import (
 	"log"
 )
 
-func Analysis(content string) (bool, error){
+func Analysis(content string) (string, error){
 
 	sent, err := seniment(regSplit(content, "!?."))
 	if err != nil{
 		log.Println(err)
-		return false, err
+		return "false", err
 	}
 
 	verification, err := verification(content)
 	if err != nil{
 		log.Println(err)
-		return false, err
+		return "false", err
 	}
 
 	log.Println("analysis")
