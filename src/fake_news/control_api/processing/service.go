@@ -23,9 +23,16 @@ func Analysis(content string) (bool, error){
 
 	//some math
 	avgSent := averageSentiment(sent)
-	avgVer := verification.Score / verification.Total
+	if verification.Total == 0{
+		avgVer := float32(0)
 
-	return overall(avgSent, avgVer)
+		return overall(avgSent, avgVer)
+	}else{
+		avgVer := verification.Score / verification.Total
+
+		return overall(avgSent, avgVer)
+	}
+
 }
 
 
