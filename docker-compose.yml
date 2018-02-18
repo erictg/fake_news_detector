@@ -25,7 +25,7 @@ services:
     restart: always
 
   sentiment:
-   build:
+    build:
       context: ./src/fake_news
       dockerfile: sentiment.dockerfile
     ports:
