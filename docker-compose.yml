@@ -24,6 +24,22 @@ services:
       - "8001:8001"
     restart: always
 
+  sentiment:
+   build:
+      context: ./src/fake_news
+      dockerfile: sentiment.dockerfile
+    ports:
+      - "8000:8000"
+    restart: always
+
+  similarity:
+    build:
+      context: ./py
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    restart: always
+
   nginx:
     build: ./proxy/.
     ports:
@@ -34,3 +50,6 @@ services:
     restart: always
     depends_on:
       - stream_api
+      - syntaxnet
+      - sentiment
+      - similarity

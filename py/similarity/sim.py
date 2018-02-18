@@ -5,6 +5,9 @@ from nltk.corpus import brown
 import math
 import numpy as np
 import sys
+from textblob import TextBlob
+from textblob.taggers import NLTKTagger
+import duckduckgo
 
 # Parameters to the algorithm. Currently set to values that was reported
 # in the paper to produce "best" results.
@@ -256,3 +259,32 @@ if val > .7:
     print("close enough")
 else:
     print("not even")
+
+nltk_tagger = NLTKTagger()
+#add this to docker 'python -m textblob.download_corpora'
+
+
+def analyze(content):
+    zen = TextBlob(content)
+    overall_total = 0.0
+    overall_score = 0.0
+    for sent in zen.sentences:
+        res = query(sent)
+        overall_total += res[0]
+        overall_score += res[1]
+
+    return [overall_total, overall_score]
+def query(q):
+    total = 0.0
+    score = 0.0
+    resp = duckduckgo.query(str(q).replace(" ", "+").lower())
+    print(len(resp.results))
+    for result in resp.results:
+        #todo add limiter
+        print(result.text)
+        sim_rating = similarity(str(q), str(result.text), False)
+        print(sim_rating)
+        total += 1
+        score += sim_rating
+    return [total, score]
+
