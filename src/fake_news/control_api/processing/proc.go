@@ -86,7 +86,7 @@ type OverallResponse struct{
 
 func overall(ratio, verification float32) (bool, error){
 	baseUrl := "http://main_learn:8003/rest/overall"
-
+	log.Println(ratio, verification)
 	dto := OverallDTO{Ratio:verification, Sentiment:ratio}
 
 	jsonVal, _ := json.Marshal(dto)
