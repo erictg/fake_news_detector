@@ -19,5 +19,5 @@ src/github.com
 .idea/
 /src/fake_news/vendor/
 
-bin/dep
+bin
 

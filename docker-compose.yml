@@ -32,7 +32,7 @@ services:
       - "8000:8000"
     restart: always
 
-  similarity:
+  verification:
     build:
       context: ./py
       dockerfile: Dockerfile
@@ -40,6 +40,12 @@ services:
       - "8002:8002"
     restart: always
 
+  main_learn:
+    build:
+      context: learning
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
   nginx:
     build: ./proxy/.
     ports:
@@ -50,6 +56,3 @@ services:
     restart: always
     depends_on:
       - stream_api
-#      - syntaxnet
-      - sentiment
-      - similarity
