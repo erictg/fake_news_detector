@@ -11,7 +11,7 @@ type RestDTO struct{
 }
 
 type RestResponse struct{
-	Result	bool	`json:"result"`
+	Result	string	`json:"result"`
 }
 func OverallAnalyze(w http.ResponseWriter, r *http.Request){
 	var dto RestDTO

@@ -84,11 +84,11 @@ type OverallDTO struct{
 }
 
 type OverallResponse struct{
-	Truthiness 	bool	`json:"truthiness"`
+	Truthiness 	string	`json:"truthiness"`
 }
 
 
-func overall(ratio, verification float32) (bool, error){
+func overall(ratio, verification float32) (string, error){
 	baseUrl := "http://main_learn:8003/rest/overall"
 	log.Println(ratio, verification)
 	dto := OverallDTO{Ratio:verification, Sentiment:ratio}
@@ -98,14 +98,14 @@ func overall(ratio, verification float32) (bool, error){
 	resp, err := http.Post(baseUrl, "application/json", bytes.NewBuffer(jsonVal))
 	if err != nil{
 		log.Println(err)
-		return false, err
+		return "false", err
 	}
 	log.Println("overall")
 	var response OverallResponse
 	err = json.NewDecoder(resp.Body).Decode(&response)
 	if err != nil{
 		log.Println(err)
-		return false, err
+		return "false", err
 	}
 
 	return response.Truthiness, nil
