@@ -1,11 +1,11 @@
 version: '3.1'
 services:
-  syntaxnet:
-    image: ljm625/syntaxnet-rest-api:dragnn
-    ports:
-      - "9000:9000"
-    volumes:
-      - ./syntaxnet/models:/models
+#  syntaxnet:
+#    image: ljm625/syntaxnet-rest-api:dragnn
+#    ports:
+#      - "9000:9000"
+#    volumes:
+#      - ./syntaxnet/models:/models
 #  db:
 #    build: db/.
 #    ports:
@@ -50,6 +50,6 @@ services:
     restart: always
     depends_on:
       - stream_api
-      - syntaxnet
+#      - syntaxnet
       - sentiment
       - similarity
