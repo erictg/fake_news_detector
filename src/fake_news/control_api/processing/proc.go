@@ -68,6 +68,8 @@ func verification(val string) (*VerificationResponse, error){
 		return nil, err
 	}
 
+	log.Println(response.Total)
+	log.Println(response.Score)
 
 	return &response, nil
 
